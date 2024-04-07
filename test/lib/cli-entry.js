@@ -12,21 +12,22 @@ const cliMock = async (t, opts) => {
   }
   exitHandlerMock.setNpm = _npm => npm = _npm
 
-  const { Npm, outputs, logMocks, logs } = await loadMockNpm(t, { ...opts, init: false })
+  const { Npm, outputs, logs } = await loadMockNpm(t, { ...opts, init: false })
   const cli = tmock(t, '{LIB}/cli-entry.js', {
     '{LIB}/npm.js': Npm,
     '{LIB}/utils/exit-handler.js': exitHandlerMock,
-    ...logMocks,
   })
 
   return {
     Npm,
     cli: (p) => validateEngines(p, () => cli),
+    logs,
     outputs,
     exitHandlerCalled: () => exitHandlerArgs,
     exitHandlerNpm: () => npm,
-    logs,
-    logsBy: (title) => logs.verbose.filter(([p]) => p === title).map(([p, ...rest]) => rest),
+    logsBy: (title) => logs.verbose
+      .filter((l) => l && l.startsWith(`${title} `))
+      .map((l) => l.replace(new RegExp(`^${title} `), '')),
   }
 }
 
@@ -37,15 +38,15 @@ t.test('print the version, and treat npm_g as npm -g', async t => {
   await cli(process)
 
   t.strictSame(process.argv, ['node', 'npm', '-g', '-v'], 'system process.argv was rewritten')
-  t.strictSame(logsBy('cli'), [['node npm']])
-  t.strictSame(logsBy('title'), [['npm']])
-  t.match(logsBy('argv'), [['"--global" "--version"']])
+  t.strictSame(logsBy('cli'), ['node npm'])
+  t.strictSame(logsBy('title'), ['npm'])
+  t.match(logsBy('argv'), ['"--global" "--version"'])
   t.strictSame(logs.info, [
-    ['using', 'npm@%s', Npm.version],
-    ['using', 'node@%s', process.version],
+    `using npm@${Npm.version}`,
+    `using node@${process.version}`,
   ])
   t.equal(outputs.length, 1)
-  t.strictSame(outputs, [[Npm.version]])
+  t.strictSame(outputs, [Npm.version])
   t.strictSame(exitHandlerCalled(), [])
 })
 

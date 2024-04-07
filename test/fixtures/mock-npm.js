@@ -2,8 +2,8 @@ const os = require('os')
 const fs = require('fs').promises
 const path = require('path')
 const tap = require('tap')
+const { LEVELS } = require('proc-log')
 const errorMessage = require('../../lib/utils/error-message')
-const mockLogs = require('./mock-logs')
 const mockGlobals = require('@npmcli/mock-globals')
 const tmock = require('./tmock')
 const defExitCode = process.exitCode
@@ -63,14 +63,56 @@ const buildMocks = (t, mocks) => {
 }
 
 const getMockNpm = async (t, { mocks, init, load, npm: npmOpts }) => {
-  const { logMocks, logs, display } = mockLogs(mocks)
-  const allMocks = buildMocks(t, { ...mocks, ...logMocks })
+  const allMocks = buildMocks(t, mocks)
   const Npm = tmock(t, '{LIB}/npm.js', allMocks)
 
   const outputs = []
   const outputErrors = []
+  const logs = Object.defineProperties(
+    [],
+    LEVELS.reduce((acc, level) => {
+      acc[level] = {
+        enumerable: true,
+        get () {
+          return this
+            .filter(([l]) => level === l)
+            .map(([, line]) => line)
+        },
+      }
+      return acc
+    }, {})
+  )
 
   class MockNpm extends Npm {
+    constructor (opts) {
+      super({
+        ...opts,
+        ...npmOpts,
+        stderr: {
+          write: (str) => {
+            str = str.trim()
+            const [heading, label, ...logParts] = str.split(' ')
+            const level = {
+              'ERR!': 'error',
+              WARN: 'warn',
+              verb: 'verbose',
+              sill: 'silly',
+            }[label] ?? label
+            if (heading === 'npm' && LEVELS.includes(level)) {
+              logs.push([level, logParts.join(' ')])
+            } else {
+              outputErrors.push(str)
+            }
+          },
+        },
+        stdout: {
+          write: (str) => {
+            outputs.push(str.trim())
+          },
+        },
+      })
+    }
+
     async exec (...args) {
       const [res, err] = await super.exec(...args).then((r) => [r]).catch(e => [null, e])
       // This mimics how the exit handler flushes output for commands that have
@@ -84,26 +126,9 @@ const getMockNpm = async (t, { mocks, init, load, npm: npmOpts }) => {
       }
       return res
     }
-
-    // lib/npm.js tests needs this to actually test the function!
-    originalOutput (...args) {
-      super.output(...args)
-    }
-
-    originalOutputError (...args) {
-      super.outputError(...args)
-    }
-
-    output (...args) {
-      outputs.push(args)
-    }
-
-    outputError (...args) {
-      outputErrors.push(args)
-    }
   }
 
-  const npm = init ? new MockNpm(npmOpts) : null
+  const npm = init ? new MockNpm() : null
   if (npm && load) {
     await npm.load()
   }
@@ -113,10 +138,8 @@ const getMockNpm = async (t, { mocks, init, load, npm: npmOpts }) => {
     npm,
     outputs,
     outputErrors,
-    joinedOutput: () => outputs.map(o => o.join(' ')).join('\n'),
-    logMocks,
     logs,
-    display,
+    joinedOutput: () => outputs.join('\n'),
   }
 }
 
@@ -213,6 +236,10 @@ const setupMockNpm = async (t, {
     // explicitly set in a test.
     'fetch-retries': 0,
     cache: dirs.cache,
+    // TODO: is this the best way to do this?
+    // this gives us all the logs without coloring because its easier to assert this way
+    loglevel: 'silly',
+    color: false,
   }
 
   const { argv, env, config } = Object.entries({ ...defaultConfigs, ...withDirs(_config) })
