@@ -53,17 +53,17 @@ t.test('print the version, and treat npm_g as npm -g', async t => {
 t.test('calling with --versions calls npm version with no args', async t => {
   const { logsBy, cli, outputs, exitHandlerCalled } = await cliMock(t, {
     globals: {
-      'process.argv': ['node', 'npm', 'install', 'or', 'whatever', '--versions'],
+      'process.argv': ['node', 'npm', 'install', 'or', 'whatever', '--versions', '--json'],
     },
   })
   await cli(process)
 
   t.equal(process.title, 'npm install or whatever')
-  t.strictSame(logsBy('cli'), [['node npm']])
-  t.strictSame(logsBy('title'), [['npm install or whatever']])
-  t.match(logsBy('argv'), [['"install" "or" "whatever" "--versions"']])
+  t.strictSame(logsBy('cli'), ['node npm'])
+  t.strictSame(logsBy('title'), ['npm install or whatever'])
+  t.match(logsBy('argv'), ['"install" "or" "whatever" "--versions"'])
   t.equal(outputs.length, 1)
-  t.match(outputs[0][0], { npm: String, node: String, v8: String })
+  t.match(JSON.parse(outputs[0]), { npm: String, node: String, v8: String })
   t.strictSame(exitHandlerCalled(), [])
 })
 
@@ -82,9 +82,9 @@ t.test('logged argv is sanitized', async t => {
 
   await cli(process)
   t.equal(process.title, 'npm version')
-  t.strictSame(logsBy('cli'), [['node npm']])
-  t.strictSame(logsBy('title'), [['npm version']])
-  t.match(logsBy('argv'), [['"version" "--registry" "https://u:***@npmjs.org/password"']])
+  t.strictSame(logsBy('cli'), ['node npm'])
+  t.strictSame(logsBy('title'), ['npm version'])
+  t.match(logsBy('argv'), ['"version" "--registry" "https://u:***@npmjs.org/password"'])
 })
 
 t.test('logged argv is sanitized with equals', async t => {
@@ -100,7 +100,7 @@ t.test('logged argv is sanitized with equals', async t => {
   })
   await cli(process)
 
-  t.match(logsBy('argv'), [['"version" "--registry" "https://u:***@npmjs.org/"']])
+  t.match(logsBy('argv'), ['"version" "--registry" "https://u:***@npmjs.org/"'])
 })
 
 t.test('print usage if no params provided', async t => {
@@ -111,7 +111,7 @@ t.test('print usage if no params provided', async t => {
   })
   await cli(process)
 
-  t.match(outputs[0][0], 'Usage:', 'outputs npm usage')
+  t.match(outputs[0], 'Usage:', 'outputs npm usage')
   t.match(exitHandlerCalled(), [], 'should call exitHandler with no args')
   t.ok(exitHandlerNpm(), 'exitHandler npm is set')
   t.match(process.exitCode, 1)
@@ -125,8 +125,8 @@ t.test('print usage if non-command param provided', async t => {
   })
   await cli(process)
 
-  t.match(outputs[0][0], 'Unknown command: "tset"')
-  t.match(outputs[0][0], 'Did you mean this?')
+  t.match(outputs[0], 'Unknown command: "tset"')
+  t.match(outputs[0], 'Did you mean this?')
   t.match(exitHandlerCalled(), [], 'should call exitHandler with no args')
   t.ok(exitHandlerNpm(), 'exitHandler npm is set')
   t.match(process.exitCode, 1)
@@ -158,7 +158,7 @@ t.test('unsupported node version', async t => {
   })
   await cli(process)
   t.match(
-    logs.warn[0][1],
+    logs.warn[0],
     /npm v.* does not support Node\.js 12\.6\.0\./
   )
 })
