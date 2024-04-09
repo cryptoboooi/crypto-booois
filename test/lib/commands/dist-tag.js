@@ -251,7 +251,7 @@ t.test('workspaces', async t => {
   })
 
   t.test('no args, one failing workspace sets exitCode to 1', async t => {
-    const { result, logs } = await mockWorkspaces(t, [], true, {
+    const { result, logStrings } = await mockWorkspaces(t, [], true, {
       'package.json': JSON.stringify({
         name: 'root',
         version: '1.0.0',
@@ -266,7 +266,10 @@ t.test('workspaces', async t => {
       },
     })
 
-    t.match(logs(), 'dist-tag ls Couldn\'t get dist-tag data for workspace-d@*', 'logs the error')
+    const error = logStrings.error.byTitle('dist-tag ls')[0]
+
+    t.match(error, 'Couldn\'t get dist-tag data for Result {')
+    t.match(error, `name: 'workspace-d',`)
     t.matchSnapshot(result(), 'printed the expected output')
   })
 })

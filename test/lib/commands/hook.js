@@ -364,9 +364,9 @@ t.test('npm hook ls - parseable output', async t => {
     outputs.map(line => line[0].split(/\t/)),
     [
       ['id', 'name', 'type', 'endpoint', 'last_delivery'],
-      ['1', 'semver', 'package', 'https://google.com', ''],
+      ['1', 'semver', 'package', 'https://google.com'],
       ['2', '@npmcli', 'scope', 'https://google.com', `${now}`],
-      ['3', 'npm', 'owner', 'https://google.com', ''],
+      ['3', 'npm', 'owner', 'https://google.com'],
     ],
     'prints the correct result'
   )

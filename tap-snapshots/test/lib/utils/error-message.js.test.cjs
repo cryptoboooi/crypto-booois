@@ -525,7 +525,7 @@ Array [
   ],
   Array [
     "argv",
-    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/"",
+    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/" /"--timing/" /"true/"",
   ],
   Array [
     "logfile",
@@ -565,7 +565,7 @@ Array [
   ],
   Array [
     "argv",
-    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/"",
+    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/" /"--timing/" /"true/"",
   ],
   Array [
     "logfile",
@@ -574,6 +574,10 @@ Array [
   Array [
     "logfile",
     "{CWD}/cache/_logs/{DATE}-debug-0.log",
+  ],
+  Array [
+    "dummy",
+    "stack trace",
   ],
 ]
 `
@@ -605,7 +609,7 @@ Array [
   ],
   Array [
     "argv",
-    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/"",
+    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/" /"--timing/" /"true/"",
   ],
   Array [
     "logfile",
@@ -614,6 +618,10 @@ Array [
   Array [
     "logfile",
     "{CWD}/cache/_logs/{DATE}-debug-0.log",
+  ],
+  Array [
+    "dummy",
+    "stack trace",
   ],
 ]
 `
@@ -645,7 +653,7 @@ Array [
   ],
   Array [
     "argv",
-    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/"",
+    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/" /"--timing/" /"true/"",
   ],
   Array [
     "logfile",
@@ -654,6 +662,10 @@ Array [
   Array [
     "logfile",
     "{CWD}/cache/_logs/{DATE}-debug-0.log",
+  ],
+  Array [
+    "dummy",
+    "stack trace",
   ],
 ]
 `
@@ -832,7 +844,7 @@ Array [
   ],
   Array [
     "argv",
-    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/"",
+    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/" /"--timing/" /"true/"",
   ],
   Array [
     "logfile",
@@ -883,7 +895,7 @@ Array [
   ],
   Array [
     "argv",
-    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/"",
+    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/" /"--timing/" /"true/"",
   ],
   Array [
     "logfile",
@@ -934,7 +946,7 @@ Array [
   ],
   Array [
     "argv",
-    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/"",
+    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/" /"--timing/" /"true/"",
   ],
   Array [
     "logfile",
@@ -985,7 +997,7 @@ Array [
   ],
   Array [
     "argv",
-    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/"",
+    "/"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/" /"--timing/" /"true/"",
   ],
   Array [
     "logfile",

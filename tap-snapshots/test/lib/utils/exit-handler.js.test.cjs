@@ -12,7 +12,7 @@ XX timing npm:load:configload Completed in {TIME}ms
 XX timing npm:load:mkdirpcache Completed in {TIME}ms
 XX timing npm:load:mkdirplogs Completed in {TIME}ms
 XX verbose title npm
-XX verbose argv "--fetch-retries" "0" "--cache" "{CWD}/cache" "--loglevel" "notice"
+XX verbose argv "--fetch-retries" "0" "--cache" "{CWD}/cache" "--loglevel" "notice" "--color" "false" "--timing" "true"
 XX timing npm:load:setTitle Completed in {TIME}ms
 XX timing npm:load:display Completed in {TIME}ms
 XX verbose logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-
@@ -32,6 +32,7 @@ XX error ERR DETAIL Unknown error
 XX verbose exit 1
 XX timing npm Completed in {TIME}ms
 XX verbose code 1
+XX error Timing info written to: {CWD}/cache/_logs/{DATE}-timing.json
 XX error A complete log of this run can be found in: {CWD}/cache/_logs/{DATE}-debug-0.log
 `
 
@@ -41,27 +42,16 @@ timing config:load Completed in {TIME}ms
 timing npm:load:configload Completed in {TIME}ms
 timing npm:load:mkdirpcache Completed in {TIME}ms
 timing npm:load:mkdirplogs Completed in {TIME}ms
-verbose title npm
-verbose argv "--fetch-retries" "0" "--cache" "{CWD}/cache" "--loglevel" "notice"
 timing npm:load:setTitle Completed in {TIME}ms
 timing npm:load:display Completed in {TIME}ms
-verbose logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-
-verbose logfile {CWD}/cache/_logs/{DATE}-debug-0.log
 timing npm:load:logFile Completed in {TIME}ms
 timing npm:load:timers Completed in {TIME}ms
 timing npm:load:configScope Completed in {TIME}ms
 timing npm:load Completed in {TIME}ms
-verbose stack Error: Unknown error
-verbose cwd {CWD}/prefix
-verbose  Foo 1.0.0
-verbose node v1.0.0
-verbose npm  v1.0.0
 error code ECODE
 error ERR SUMMARY Unknown error
 error ERR DETAIL Unknown error
-verbose exit 1
 timing npm Completed in {TIME}ms
-verbose code 1
-error  A complete log of this run can be found in: {CWD}/cache/_logs/{DATE}-debug-0.log
-silly logfile done cleaning log files
+error Timing info written to: {CWD}/cache/_logs/{DATE}-timing.json
+npm ERR! A complete log of this run can be found in: {CWD}/cache/_logs/{DATE}-debug-0.log
 `

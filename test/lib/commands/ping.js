@@ -15,17 +15,17 @@ t.test('no details', async t => {
 })
 
 t.test('with details', async t => {
-  const { npm, logs, joinedOutput } = await loadMockNpm(t)
+  const { npm, logStrings, joinedOutput } = await loadMockNpm(t)
   const registry = new MockRegistry({
     tap: t,
     registry: npm.config.get('registry'),
   })
   registry.ping({ body: { test: true } })
   await npm.exec('ping', [])
-  t.match(logs.notice, [
-    ['PING', 'https://registry.npmjs.org/'],
-    ['PONG', /[0-9]+ms/],
-    ['PONG', '{\n  "test": true\n}'],
+  t.match(logStrings.notice, [
+    `PING https://registry.npmjs.org/`,
+    /PONG [0-9]+ms/,
+    `PONG {\nPONG   "a": 1,\nPONG   "b": 2\nPONG }`,
   ])
   t.match(joinedOutput(), '')
 })

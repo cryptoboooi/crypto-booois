@@ -2,8 +2,8 @@ const os = require('os')
 const fs = require('fs').promises
 const path = require('path')
 const tap = require('tap')
-const { LEVELS } = require('proc-log')
 const errorMessage = require('../../lib/utils/error-message')
+const mockLogs = require('./mock-logs.js')
 const mockGlobals = require('@npmcli/mock-globals')
 const tmock = require('./tmock')
 const defExitCode = process.exitCode
@@ -63,53 +63,16 @@ const buildMocks = (t, mocks) => {
 }
 
 const getMockNpm = async (t, { mocks, init, load, npm: npmOpts }) => {
+  const { streams, logs } = mockLogs()
   const allMocks = buildMocks(t, mocks)
   const Npm = tmock(t, '{LIB}/npm.js', allMocks)
-
-  const outputs = []
-  const outputErrors = []
-  const logs = Object.defineProperties(
-    [],
-    LEVELS.reduce((acc, level) => {
-      acc[level] = {
-        enumerable: true,
-        get () {
-          return this
-            .filter(([l]) => level === l)
-            .map(([, line]) => line)
-        },
-      }
-      return acc
-    }, {})
-  )
 
   class MockNpm extends Npm {
     constructor (opts) {
       super({
         ...opts,
+        ...streams,
         ...npmOpts,
-        stderr: {
-          write: (str) => {
-            str = str.trim()
-            const [heading, label, ...logParts] = str.split(' ')
-            const level = {
-              'ERR!': 'error',
-              WARN: 'warn',
-              verb: 'verbose',
-              sill: 'silly',
-            }[label] ?? label
-            if (heading === 'npm' && LEVELS.includes(level)) {
-              logs.push([level, logParts.join(' ')])
-            } else {
-              outputErrors.push(str)
-            }
-          },
-        },
-        stdout: {
-          write: (str) => {
-            outputs.push(str.trim())
-          },
-        },
       })
     }
 
@@ -136,10 +99,7 @@ const getMockNpm = async (t, { mocks, init, load, npm: npmOpts }) => {
   return {
     Npm: MockNpm,
     npm,
-    outputs,
-    outputErrors,
-    logs,
-    joinedOutput: () => outputs.join('\n'),
+    ...logs,
   }
 }
 
@@ -236,10 +196,12 @@ const setupMockNpm = async (t, {
     // explicitly set in a test.
     'fetch-retries': 0,
     cache: dirs.cache,
-    // TODO: is this the best way to do this?
-    // this gives us all the logs without coloring because its easier to assert this way
+    // This will give us all the loglevels including timing in a non-colorized way
+    // so we can easily assert their contents. Individual tests can overwrite these
+    // with my passing in configs if they need to test other forms of output.
     loglevel: 'silly',
     color: false,
+    timing: true,
   }
 
   const { argv, env, config } = Object.entries({ ...defaultConfigs, ...withDirs(_config) })

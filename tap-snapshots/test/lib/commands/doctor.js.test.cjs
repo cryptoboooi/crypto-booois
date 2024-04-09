@@ -10,41 +10,42 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "checkPing",
+      "doctor",
       "Pinging registry",
     ],
     Array [
-      "getLatestNpmVersion",
+      "doctor",
       "Getting npm package information",
     ],
     Array [
-      "getLatestNodejsVersion",
+      "doctor",
       "Getting Node.js release information",
     ],
     Array [
-      "getGitPath",
+      "doctor",
       "Finding git in your PATH",
     ],
     Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
+      "doctor",
+      "getBinPath Finding npm global bin in your PATH",
     ],
     Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
+      "doctor",
+      "verifyCachedFiles Verifying the npm cache",
     ],
     Array [
-      "verifyCachedFiles",
+      "doctor ",
       String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
+        doctor verifyCachedFiles Verification complete. Stats: {
+         "badContentCount": 0,
+         "reclaimedCount": 0,
+         "missingContent": 0,
+         "verifiedContent": 0
+        doctor }
       ),
     ],
   ],
@@ -54,79 +55,40 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP all clear > output 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok       
+npm ping                            ok
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok       
-Perms check on local node_modules   ok       
-Perms check on global node_modules  ok       
-Perms check on local bin folder     ok       
-Perms check on global bin folder    ok       
+Perms check on cached files         ok
+Perms check on local node_modules   ok
+Perms check on global node_modules  ok
+Perms check on local bin folder     ok
+Perms check on global bin folder    ok
 Verify cache contents               ok      verified 0 tarballs
 `
 
 exports[`test/lib/commands/doctor.js TAP all clear in color > everything is ok in color 1`] = `
 [4mCheck[24m                               [4mValue[24m   [4mRecommendation/Notes[24m
-npm ping                            [32mok[39m       
+npm ping                            [32mok[39m
 npm -v                              [32mok[39m      current: v1.0.0, latest: v1.0.0
 node -v                             [32mok[39m      current: v1.0.0, recommended: v1.0.0
 npm config get registry             [32mok[39m      using default registry (https://registry.npmjs.org/)
 git executable in PATH              [32mok[39m      /path/to/git
 global bin folder in PATH           [32mok[39m      {CWD}/global/bin
-Perms check on cached files         [32mok[39m       
-Perms check on local node_modules   [32mok[39m       
-Perms check on global node_modules  [32mok[39m       
-Perms check on local bin folder     [32mok[39m       
-Perms check on global bin folder    [32mok[39m       
+Perms check on cached files         [32mok[39m
+Perms check on local node_modules   [32mok[39m
+Perms check on global node_modules  [32mok[39m
+Perms check on local bin folder     [32mok[39m
+Perms check on global bin folder    [32mok[39m
 Verify cache contents               [32mok[39m      verified 0 tarballs
 `
 
 exports[`test/lib/commands/doctor.js TAP all clear in color > logs 1`] = `
 Object {
   "error": Array [],
-  "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
-      ),
-    ],
-  ],
+  "info": Array [],
   "warn": Array [],
 }
 `
@@ -136,41 +98,42 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "checkPing",
+      "doctor",
       "Pinging registry",
     ],
     Array [
-      "getLatestNpmVersion",
+      "doctor",
       "Getting npm package information",
     ],
     Array [
-      "getLatestNodejsVersion",
+      "doctor",
       "Getting Node.js release information",
     ],
     Array [
-      "getGitPath",
+      "doctor",
       "Finding git in your PATH",
     ],
     Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
+      "doctor",
+      "getBinPath Finding npm global bin in your PATH",
     ],
     Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
+      "doctor",
+      "verifyCachedFiles Verifying the npm cache",
     ],
     Array [
-      "verifyCachedFiles",
+      "doctor ",
       String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
+        doctor verifyCachedFiles Verification complete. Stats: {
+         "badContentCount": 0,
+         "reclaimedCount": 0,
+         "missingContent": 0,
+         "verifiedContent": 0
+        doctor }
       ),
     ],
   ],
@@ -186,27 +149,27 @@ node -v                             not ok  Error: Invalid protocol \`ssh:\` con
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok       
-Perms check on local node_modules   ok       
-Perms check on global node_modules  ok       
-Perms check on local bin folder     ok       
-Perms check on global bin folder    ok       
+Perms check on cached files         ok
+Perms check on local node_modules   ok
+Perms check on global node_modules  ok
+Perms check on local bin folder     ok
+Perms check on global bin folder    ok
 Verify cache contents               ok      verified 0 tarballs
 `
 
 exports[`test/lib/commands/doctor.js TAP cacache badContent > corrupted cache content 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok       
+npm ping                            ok
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok       
-Perms check on local node_modules   ok       
-Perms check on global node_modules  ok       
-Perms check on local bin folder     ok       
-Perms check on global bin folder    ok       
+Perms check on cached files         ok
+Perms check on local node_modules   ok
+Perms check on global node_modules  ok
+Perms check on local bin folder     ok
+Perms check on global bin folder    ok
 Verify cache contents               ok      verified 2 tarballs
 `
 
@@ -215,52 +178,53 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "checkPing",
+      "doctor",
       "Pinging registry",
     ],
     Array [
-      "getLatestNpmVersion",
+      "doctor",
       "Getting npm package information",
     ],
     Array [
-      "getLatestNodejsVersion",
+      "doctor",
       "Getting Node.js release information",
     ],
     Array [
-      "getGitPath",
+      "doctor",
       "Finding git in your PATH",
     ],
     Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
+      "doctor",
+      "getBinPath Finding npm global bin in your PATH",
     ],
     Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
+      "doctor",
+      "verifyCachedFiles Verifying the npm cache",
     ],
     Array [
-      "verifyCachedFiles",
+      "doctor ",
       String(
-        Verification complete. Stats: {
-          "badContentCount": 1,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 2
-        }
+        doctor verifyCachedFiles Verification complete. Stats: {
+         "badContentCount": 1,
+         "reclaimedCount": 0,
+         "missingContent": 0,
+         "verifiedContent": 2
+        doctor }
       ),
     ],
   ],
   "warn": Array [
     Array [
-      "verifyCachedFiles",
-      "Corrupted content removed: 1",
+      "doctor",
+      "verifyCachedFiles Corrupted content removed: 1",
     ],
     Array [
-      "verifyCachedFiles",
-      "Cache issues have been fixed",
+      "doctor",
+      "verifyCachedFiles Cache issues have been fixed",
     ],
   ],
 }
@@ -271,52 +235,53 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "checkPing",
+      "doctor",
       "Pinging registry",
     ],
     Array [
-      "getLatestNpmVersion",
+      "doctor",
       "Getting npm package information",
     ],
     Array [
-      "getLatestNodejsVersion",
+      "doctor",
       "Getting Node.js release information",
     ],
     Array [
-      "getGitPath",
+      "doctor",
       "Finding git in your PATH",
     ],
     Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
+      "doctor",
+      "getBinPath Finding npm global bin in your PATH",
     ],
     Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
+      "doctor",
+      "verifyCachedFiles Verifying the npm cache",
     ],
     Array [
-      "verifyCachedFiles",
+      "doctor ",
       String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 1,
-          "verifiedContent": 2
-        }
+        doctor verifyCachedFiles Verification complete. Stats: {
+         "badContentCount": 0,
+         "reclaimedCount": 0,
+         "missingContent": 1,
+         "verifiedContent": 2
+        doctor }
       ),
     ],
   ],
   "warn": Array [
     Array [
-      "verifyCachedFiles",
-      "Missing content: 1",
+      "doctor",
+      "verifyCachedFiles Missing content: 1",
     ],
     Array [
-      "verifyCachedFiles",
-      "Cache issues have been fixed",
+      "doctor",
+      "verifyCachedFiles Cache issues have been fixed",
     ],
   ],
 }
@@ -324,33 +289,33 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP cacache missingContent > missing content 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok       
+npm ping                            ok
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok       
-Perms check on local node_modules   ok       
-Perms check on global node_modules  ok       
-Perms check on local bin folder     ok       
-Perms check on global bin folder    ok       
+Perms check on cached files         ok
+Perms check on local node_modules   ok
+Perms check on global node_modules  ok
+Perms check on local bin folder     ok
+Perms check on global bin folder    ok
 Verify cache contents               ok      verified 2 tarballs
 `
 
 exports[`test/lib/commands/doctor.js TAP cacache reclaimedCount > content garbage collected 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok       
+npm ping                            ok
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok       
-Perms check on local node_modules   ok       
-Perms check on global node_modules  ok       
-Perms check on local bin folder     ok       
-Perms check on global bin folder    ok       
+Perms check on cached files         ok
+Perms check on local node_modules   ok
+Perms check on global node_modules  ok
+Perms check on local bin folder     ok
+Perms check on global bin folder    ok
 Verify cache contents               ok      verified 2 tarballs
 `
 
@@ -359,52 +324,53 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "checkPing",
+      "doctor",
       "Pinging registry",
     ],
     Array [
-      "getLatestNpmVersion",
+      "doctor",
       "Getting npm package information",
     ],
     Array [
-      "getLatestNodejsVersion",
+      "doctor",
       "Getting Node.js release information",
     ],
     Array [
-      "getGitPath",
+      "doctor",
       "Finding git in your PATH",
     ],
     Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
+      "doctor",
+      "getBinPath Finding npm global bin in your PATH",
     ],
     Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
+      "doctor",
+      "verifyCachedFiles Verifying the npm cache",
     ],
     Array [
-      "verifyCachedFiles",
+      "doctor ",
       String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 1,
-          "missingContent": 0,
-          "verifiedContent": 2
-        }
+        doctor verifyCachedFiles Verification complete. Stats: {
+         "badContentCount": 0,
+         "reclaimedCount": 1,
+         "missingContent": 0,
+         "verifiedContent": 2
+        doctor }
       ),
     ],
   ],
   "warn": Array [
     Array [
-      "verifyCachedFiles",
-      "Content garbage-collected: 1 (undefined bytes)",
+      "doctor",
+      "verifyCachedFiles Content garbage-collected: 1 (undefined bytes)",
     ],
     Array [
-      "verifyCachedFiles",
-      "Cache issues have been fixed",
+      "doctor",
+      "verifyCachedFiles Cache issues have been fixed",
     ],
   ],
 }
@@ -415,21 +381,22 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
+      "doctor",
+      "verifyCachedFiles Verifying the npm cache",
     ],
     Array [
-      "verifyCachedFiles",
+      "doctor ",
       String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
+        doctor verifyCachedFiles Verification complete. Stats: {
+         "badContentCount": 0,
+         "reclaimedCount": 0,
+         "missingContent": 0,
+         "verifiedContent": 0
+        doctor }
       ),
     ],
   ],
@@ -439,7 +406,7 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP discrete checks cache > output 1`] = `
 Check                        Value   Recommendation/Notes
-Perms check on cached files  ok       
+Perms check on cached files  ok
 Verify cache contents        ok      verified 0 tarballs
 `
 
@@ -448,6 +415,7 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
   ],
@@ -464,15 +432,16 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "getGitPath",
+      "doctor",
       "Finding git in your PATH",
     ],
     Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
+      "doctor",
+      "getBinPath Finding npm global bin in your PATH",
     ],
   ],
   "warn": Array [],
@@ -490,6 +459,7 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
   ],
@@ -499,11 +469,11 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP discrete checks permissions - not windows > output 1`] = `
 Check                               Value   Recommendation/Notes
-Perms check on cached files         ok       
-Perms check on local node_modules   ok       
-Perms check on global node_modules  ok       
-Perms check on local bin folder     ok       
-Perms check on global bin folder    ok       
+Perms check on cached files         ok
+Perms check on local node_modules   ok
+Perms check on global node_modules  ok
+Perms check on local bin folder     ok
+Perms check on global bin folder    ok
 `
 
 exports[`test/lib/commands/doctor.js TAP discrete checks permissions - windows > logs 1`] = `
@@ -511,6 +481,7 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
   ],
@@ -527,10 +498,11 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "checkPing",
+      "doctor",
       "Pinging registry",
     ],
   ],
@@ -540,7 +512,7 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP discrete checks ping > output 1`] = `
 Check     Value   Recommendation/Notes
-npm ping  ok       
+npm ping  ok
 `
 
 exports[`test/lib/commands/doctor.js TAP discrete checks registry > logs 1`] = `
@@ -548,10 +520,11 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "checkPing",
+      "doctor",
       "Pinging registry",
     ],
   ],
@@ -561,7 +534,7 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP discrete checks registry > output 1`] = `
 Check                    Value   Recommendation/Notes
-npm ping                 ok       
+npm ping                 ok
 npm config get registry  ok      using default registry (https://registry.npmjs.org/)
 `
 
@@ -570,14 +543,15 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "getLatestNpmVersion",
+      "doctor",
       "Getting npm package information",
     ],
     Array [
-      "getLatestNodejsVersion",
+      "doctor",
       "Getting Node.js release information",
     ],
   ],
@@ -596,64 +570,65 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "checkPing",
+      "doctor",
       "Pinging registry",
     ],
     Array [
-      "getLatestNpmVersion",
+      "doctor",
       "Getting npm package information",
     ],
     Array [
-      "getLatestNodejsVersion",
+      "doctor",
       "Getting Node.js release information",
     ],
     Array [
-      "getGitPath",
+      "doctor",
       "Finding git in your PATH",
     ],
     Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
+      "doctor",
+      "getBinPath Finding npm global bin in your PATH",
     ],
     Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
+      "doctor",
+      "verifyCachedFiles Verifying the npm cache",
     ],
     Array [
-      "verifyCachedFiles",
+      "doctor ",
       String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
+        doctor verifyCachedFiles Verification complete. Stats: {
+         "badContentCount": 0,
+         "reclaimedCount": 0,
+         "missingContent": 0,
+         "verifiedContent": 0
+        doctor }
       ),
     ],
   ],
   "warn": Array [
     Array [
-      "checkFilesPermission",
-      "error reading directory {CWD}/cache",
+      "doctor",
+      "checkFilesPermission error reading directory {CWD}/cache",
     ],
     Array [
-      "checkFilesPermission",
-      "error reading directory {CWD}/prefix/node_modules",
+      "doctor",
+      "checkFilesPermission error reading directory {CWD}/prefix/node_modules",
     ],
     Array [
-      "checkFilesPermission",
-      "error reading directory {CWD}/global/node_modules",
+      "doctor",
+      "checkFilesPermission error reading directory {CWD}/global/node_modules",
     ],
     Array [
-      "checkFilesPermission",
-      "error reading directory {CWD}/prefix/node_modules/.bin",
+      "doctor",
+      "checkFilesPermission error reading directory {CWD}/prefix/node_modules/.bin",
     ],
     Array [
-      "checkFilesPermission",
-      "error reading directory {CWD}/global/bin",
+      "doctor",
+      "checkFilesPermission error reading directory {CWD}/global/bin",
     ],
   ],
 }
@@ -661,7 +636,7 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP error reading directory > readdir error 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok       
+npm ping                            ok
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
@@ -677,17 +652,17 @@ Verify cache contents               ok      verified 0 tarballs
 
 exports[`test/lib/commands/doctor.js TAP incorrect owner > incorrect owner 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok       
+npm ping                            ok
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
 Perms check on cached files         not ok  Check the permissions of files in {CWD}/cache (should be owned by current user)
-Perms check on local node_modules   ok       
-Perms check on global node_modules  ok       
-Perms check on local bin folder     ok       
-Perms check on global bin folder    ok       
+Perms check on local node_modules   ok
+Perms check on global node_modules  ok
+Perms check on local bin folder     ok
+Perms check on global bin folder    ok
 Verify cache contents               ok      verified 0 tarballs
 `
 
@@ -696,48 +671,49 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "checkPing",
+      "doctor",
       "Pinging registry",
     ],
     Array [
-      "getLatestNpmVersion",
+      "doctor",
       "Getting npm package information",
     ],
     Array [
-      "getLatestNodejsVersion",
+      "doctor",
       "Getting Node.js release information",
     ],
     Array [
-      "getGitPath",
+      "doctor",
       "Finding git in your PATH",
     ],
     Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
+      "doctor",
+      "getBinPath Finding npm global bin in your PATH",
     ],
     Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
+      "doctor",
+      "verifyCachedFiles Verifying the npm cache",
     ],
     Array [
-      "verifyCachedFiles",
+      "doctor ",
       String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
+        doctor verifyCachedFiles Verification complete. Stats: {
+         "badContentCount": 0,
+         "reclaimedCount": 0,
+         "missingContent": 0,
+         "verifiedContent": 0
+        doctor }
       ),
     ],
   ],
   "warn": Array [
     Array [
-      "checkFilesPermission",
-      "should be owner of {CWD}/cache/_cacache",
+      "doctor",
+      "checkFilesPermission should be owner of {CWD}/cache/_cacache",
     ],
   ],
 }
@@ -745,7 +721,7 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP incorrect permissions > incorrect owner 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok       
+npm ping                            ok
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
@@ -763,63 +739,64 @@ exports[`test/lib/commands/doctor.js TAP incorrect permissions > logs 1`] = `
 Object {
   "error": Array [
     Array [
-      "checkFilesPermission",
-      "Missing permissions on {CWD}/cache (expect: readable)",
+      "doctor",
+      "checkFilesPermission Missing permissions on {CWD}/cache (expect: readable)",
     ],
     Array [
-      "checkFilesPermission",
-      "Missing permissions on {CWD}/prefix/node_modules (expect: readable, writable)",
+      "doctor",
+      "checkFilesPermission Missing permissions on {CWD}/prefix/node_modules (expect: readable, writable)",
     ],
     Array [
-      "checkFilesPermission",
-      "Missing permissions on {CWD}/global/node_modules (expect: readable)",
+      "doctor",
+      "checkFilesPermission Missing permissions on {CWD}/global/node_modules (expect: readable)",
     ],
     Array [
-      "checkFilesPermission",
-      "Missing permissions on {CWD}/prefix/node_modules/.bin (expect: readable, writable, executable)",
+      "doctor",
+      "checkFilesPermission Missing permissions on {CWD}/prefix/node_modules/.bin (expect: readable, writable, executable)",
     ],
     Array [
-      "checkFilesPermission",
-      "Missing permissions on {CWD}/global/bin (expect: executable)",
+      "doctor",
+      "checkFilesPermission Missing permissions on {CWD}/global/bin (expect: executable)",
     ],
   ],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "checkPing",
+      "doctor",
       "Pinging registry",
     ],
     Array [
-      "getLatestNpmVersion",
+      "doctor",
       "Getting npm package information",
     ],
     Array [
-      "getLatestNodejsVersion",
+      "doctor",
       "Getting Node.js release information",
     ],
     Array [
-      "getGitPath",
+      "doctor",
       "Finding git in your PATH",
     ],
     Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
+      "doctor",
+      "getBinPath Finding npm global bin in your PATH",
     ],
     Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
+      "doctor",
+      "verifyCachedFiles Verifying the npm cache",
     ],
     Array [
-      "verifyCachedFiles",
+      "doctor ",
       String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
+        doctor verifyCachedFiles Verification complete. Stats: {
+         "badContentCount": 0,
+         "reclaimedCount": 0,
+         "missingContent": 0,
+         "verifiedContent": 0
+        doctor }
       ),
     ],
   ],
@@ -832,47 +809,56 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "checkPing",
+      "doctor",
       "Pinging registry",
     ],
     Array [
-      "getLatestNpmVersion",
+      "doctor",
       "Getting npm package information",
     ],
     Array [
-      "getLatestNodejsVersion",
+      "doctor",
       "Getting Node.js release information",
     ],
     Array [
-      "getGitPath",
+      "doctor",
       "Finding git in your PATH",
     ],
     Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
+      "doctor",
+      "getBinPath Finding npm global bin in your PATH",
     ],
     Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
+      "doctor",
+      "verifyCachedFiles Verifying the npm cache",
     ],
     Array [
-      "verifyCachedFiles",
+      "doctor ",
       String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
+        doctor verifyCachedFiles Verification complete. Stats: {
+         "badContentCount": 0,
+         "reclaimedCount": 0,
+         "missingContent": 0,
+         "verifiedContent": 0
+        doctor }
       ),
     ],
   ],
   "warn": Array [
     Array [
-      Error: test error,
+      "doctor ",
+      String(
+        doctor getGitPath Error: test error
+           at which ({CWD}/{TESTDIR}/doctor.js:313:15)
+           at Doctor.getGitPath ({CWD}/lib/commands/doctor.js:300:18)
+           at Doctor.exec ({CWD}/lib/commands/doctor.js:130:40)
+           at processTicksAndRejections (node:internal/process/task_queues:95:5)
+           at MockNpm.exec ({CWD}/test/fixtures/mock-npm.js:80:26)
+      ),
     ],
   ],
 }
@@ -880,17 +866,17 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP missing git > missing git 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok       
+npm ping                            ok
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              not ok  Error: Install git and ensure it's in your PATH.
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok       
-Perms check on local node_modules   ok       
-Perms check on global node_modules  ok       
-Perms check on local bin folder     ok       
-Perms check on global bin folder    ok       
+Perms check on cached files         ok
+Perms check on local node_modules   ok
+Perms check on global node_modules  ok
+Perms check on local bin folder     ok
+Perms check on global bin folder    ok
 Verify cache contents               ok      verified 0 tarballs
 `
 
@@ -899,52 +885,53 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "checkPing",
+      "doctor",
       "Pinging registry",
     ],
     Array [
-      "getLatestNpmVersion",
+      "doctor",
       "Getting npm package information",
     ],
     Array [
-      "getLatestNodejsVersion",
+      "doctor",
       "Getting Node.js release information",
     ],
     Array [
-      "getGitPath",
+      "doctor",
       "Finding git in your PATH",
     ],
     Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
+      "doctor",
+      "getBinPath Finding npm global bin in your PATH",
     ],
     Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
+      "doctor",
+      "verifyCachedFiles Verifying the npm cache",
     ],
     Array [
-      "verifyCachedFiles",
+      "doctor ",
       String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
+        doctor verifyCachedFiles Verification complete. Stats: {
+         "badContentCount": 0,
+         "reclaimedCount": 0,
+         "missingContent": 0,
+         "verifiedContent": 0
+        doctor }
       ),
     ],
   ],
   "warn": Array [
     Array [
-      "checkFilesPermission",
-      "error getting info for {CWD}/global/node_modules",
+      "doctor",
+      "checkFilesPermission error getting info for {CWD}/global/node_modules",
     ],
     Array [
-      "checkFilesPermission",
-      "error getting info for {CWD}/global/bin",
+      "doctor",
+      "checkFilesPermission error getting info for {CWD}/global/bin",
     ],
   ],
 }
@@ -952,16 +939,16 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP missing global directories > missing global directories 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok       
+npm ping                            ok
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok       
-Perms check on local node_modules   ok       
+Perms check on cached files         ok
+Perms check on local node_modules   ok
 Perms check on global node_modules  not ok  Check the permissions of files in {CWD}/global/node_modules
-Perms check on local bin folder     ok       
+Perms check on local bin folder     ok
 Perms check on global bin folder    not ok  Check the permissions of files in {CWD}/global/bin
 Verify cache contents               ok      verified 0 tarballs
 `
@@ -971,41 +958,42 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "checkPing",
+      "doctor",
       "Pinging registry",
     ],
     Array [
-      "getLatestNpmVersion",
+      "doctor",
       "Getting npm package information",
     ],
     Array [
-      "getLatestNodejsVersion",
+      "doctor",
       "Getting Node.js release information",
     ],
     Array [
-      "getGitPath",
+      "doctor",
       "Finding git in your PATH",
     ],
     Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
+      "doctor",
+      "getBinPath Finding npm global bin in your PATH",
     ],
     Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
+      "doctor",
+      "verifyCachedFiles Verifying the npm cache",
     ],
     Array [
-      "verifyCachedFiles",
+      "doctor ",
       String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
+        doctor verifyCachedFiles Verification complete. Stats: {
+         "badContentCount": 0,
+         "reclaimedCount": 0,
+         "missingContent": 0,
+         "verifiedContent": 0
+        doctor }
       ),
     ],
   ],
@@ -1015,17 +1003,17 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP missing local node_modules > missing local node_modules 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok       
+npm ping                            ok
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok       
-Perms check on local node_modules   ok       
-Perms check on global node_modules  ok       
-Perms check on local bin folder     ok       
-Perms check on global bin folder    ok       
+Perms check on cached files         ok
+Perms check on local node_modules   ok
+Perms check on global node_modules  ok
+Perms check on local bin folder     ok
+Perms check on global bin folder    ok
 Verify cache contents               ok      verified 0 tarballs
 `
 
@@ -1034,41 +1022,42 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "checkPing",
+      "doctor",
       "Pinging registry",
     ],
     Array [
-      "getLatestNpmVersion",
+      "doctor",
       "Getting npm package information",
     ],
     Array [
-      "getLatestNodejsVersion",
+      "doctor",
       "Getting Node.js release information",
     ],
     Array [
-      "getGitPath",
+      "doctor",
       "Finding git in your PATH",
     ],
     Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
+      "doctor",
+      "getBinPath Finding npm global bin in your PATH",
     ],
     Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
+      "doctor",
+      "verifyCachedFiles Verifying the npm cache",
     ],
     Array [
-      "verifyCachedFiles",
+      "doctor ",
       String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
+        doctor verifyCachedFiles Verification complete. Stats: {
+         "badContentCount": 0,
+         "reclaimedCount": 0,
+         "missingContent": 0,
+         "verifiedContent": 0
+        doctor }
       ),
     ],
   ],
@@ -1078,17 +1067,17 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP node out of date - current > node is out of date 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok       
+npm ping                            ok
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             not ok  Use node v2.0.1 (current: v2.0.0)
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok       
-Perms check on local node_modules   ok       
-Perms check on global node_modules  ok       
-Perms check on local bin folder     ok       
-Perms check on global bin folder    ok       
+Perms check on cached files         ok
+Perms check on local node_modules   ok
+Perms check on global node_modules  ok
+Perms check on local bin folder     ok
+Perms check on global bin folder    ok
 Verify cache contents               ok      verified 0 tarballs
 `
 
@@ -1097,41 +1086,42 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "checkPing",
+      "doctor",
       "Pinging registry",
     ],
     Array [
-      "getLatestNpmVersion",
+      "doctor",
       "Getting npm package information",
     ],
     Array [
-      "getLatestNodejsVersion",
+      "doctor",
       "Getting Node.js release information",
     ],
     Array [
-      "getGitPath",
+      "doctor",
       "Finding git in your PATH",
     ],
     Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
+      "doctor",
+      "getBinPath Finding npm global bin in your PATH",
     ],
     Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
+      "doctor",
+      "verifyCachedFiles Verifying the npm cache",
     ],
     Array [
-      "verifyCachedFiles",
+      "doctor ",
       String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
+        doctor verifyCachedFiles Verification complete. Stats: {
+         "badContentCount": 0,
+         "reclaimedCount": 0,
+         "missingContent": 0,
+         "verifiedContent": 0
+        doctor }
       ),
     ],
   ],
@@ -1141,17 +1131,17 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP node out of date - lts > node is out of date 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok       
+npm ping                            ok
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             not ok  Use node v1.0.0 (current: v0.0.1)
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok       
-Perms check on local node_modules   ok       
-Perms check on global node_modules  ok       
-Perms check on local bin folder     ok       
-Perms check on global bin folder    ok       
+Perms check on cached files         ok
+Perms check on local node_modules   ok
+Perms check on global node_modules  ok
+Perms check on local bin folder     ok
+Perms check on global bin folder    ok
 Verify cache contents               ok      verified 0 tarballs
 `
 
@@ -1160,41 +1150,42 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "checkPing",
+      "doctor",
       "Pinging registry",
     ],
     Array [
-      "getLatestNpmVersion",
+      "doctor",
       "Getting npm package information",
     ],
     Array [
-      "getLatestNodejsVersion",
+      "doctor",
       "Getting Node.js release information",
     ],
     Array [
-      "getGitPath",
+      "doctor",
       "Finding git in your PATH",
     ],
     Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
+      "doctor",
+      "getBinPath Finding npm global bin in your PATH",
     ],
     Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
+      "doctor",
+      "verifyCachedFiles Verifying the npm cache",
     ],
     Array [
-      "verifyCachedFiles",
+      "doctor ",
       String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
+        doctor verifyCachedFiles Verification complete. Stats: {
+         "badContentCount": 0,
+         "reclaimedCount": 0,
+         "missingContent": 0,
+         "verifiedContent": 0
+        doctor }
       ),
     ],
   ],
@@ -1204,17 +1195,17 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP non-default registry > non default registry 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok       
+npm ping                            ok
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             not ok  Try \`npm config set registry=https://registry.npmjs.org/\`
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok       
-Perms check on local node_modules   ok       
-Perms check on global node_modules  ok       
-Perms check on local bin folder     ok       
-Perms check on global bin folder    ok       
+Perms check on cached files         ok
+Perms check on local node_modules   ok
+Perms check on global node_modules  ok
+Perms check on local bin folder     ok
+Perms check on global bin folder    ok
 Verify cache contents               ok      verified 0 tarballs
 `
 
@@ -1223,41 +1214,42 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "checkPing",
+      "doctor",
       "Pinging registry",
     ],
     Array [
-      "getLatestNpmVersion",
+      "doctor",
       "Getting npm package information",
     ],
     Array [
-      "getLatestNodejsVersion",
+      "doctor",
       "Getting Node.js release information",
     ],
     Array [
-      "getGitPath",
+      "doctor",
       "Finding git in your PATH",
     ],
     Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
+      "doctor",
+      "getBinPath Finding npm global bin in your PATH",
     ],
     Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
+      "doctor",
+      "verifyCachedFiles Verifying the npm cache",
     ],
     Array [
-      "verifyCachedFiles",
+      "doctor ",
       String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
+        doctor verifyCachedFiles Verification complete. Stats: {
+         "badContentCount": 0,
+         "reclaimedCount": 0,
+         "missingContent": 0,
+         "verifiedContent": 0
+        doctor }
       ),
     ],
   ],
@@ -1267,17 +1259,17 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP npm out of date > npm is out of date 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok       
+npm ping                            ok
 npm -v                              not ok  Use npm v2.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok       
-Perms check on local node_modules   ok       
-Perms check on global node_modules  ok       
-Perms check on local bin folder     ok       
-Perms check on global bin folder    ok       
+Perms check on cached files         ok
+Perms check on local node_modules   ok
+Perms check on global node_modules  ok
+Perms check on local bin folder     ok
+Perms check on global bin folder    ok
 Verify cache contents               ok      verified 0 tarballs
 `
 
@@ -1286,41 +1278,42 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "checkPing",
+      "doctor",
       "Pinging registry",
     ],
     Array [
-      "getLatestNpmVersion",
+      "doctor",
       "Getting npm package information",
     ],
     Array [
-      "getLatestNodejsVersion",
+      "doctor",
       "Getting Node.js release information",
     ],
     Array [
-      "getGitPath",
+      "doctor",
       "Finding git in your PATH",
     ],
     Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
+      "doctor",
+      "getBinPath Finding npm global bin in your PATH",
     ],
     Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
+      "doctor",
+      "verifyCachedFiles Verifying the npm cache",
     ],
     Array [
-      "verifyCachedFiles",
+      "doctor ",
       String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
+        doctor verifyCachedFiles Verification complete. Stats: {
+         "badContentCount": 0,
+         "reclaimedCount": 0,
+         "missingContent": 0,
+         "verifiedContent": 0
+        doctor }
       ),
     ],
   ],
@@ -1336,57 +1329,18 @@ node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok       
-Perms check on local node_modules   ok       
-Perms check on global node_modules  ok       
-Perms check on local bin folder     ok       
-Perms check on global bin folder    ok       
+Perms check on cached files         ok
+Perms check on local node_modules   ok
+Perms check on global node_modules  ok
+Perms check on local bin folder     ok
+Perms check on global bin folder    ok
 Verify cache contents               ok      verified 0 tarballs
 `
 
 exports[`test/lib/commands/doctor.js TAP ping 404 in color > logs 1`] = `
 Object {
   "error": Array [],
-  "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
-      ),
-    ],
-  ],
+  "info": Array [],
   "warn": Array [],
 }
 `
@@ -1399,11 +1353,11 @@ node -v                             [32mok[39m      current: v1.0.0, recommend
 npm config get registry             [32mok[39m      using default registry (https://registry.npmjs.org/)
 git executable in PATH              [32mok[39m      /path/to/git
 global bin folder in PATH           [32mok[39m      {CWD}/global/bin
-Perms check on cached files         [32mok[39m       
-Perms check on local node_modules   [32mok[39m       
-Perms check on global node_modules  [32mok[39m       
-Perms check on local bin folder     [32mok[39m       
-Perms check on global bin folder    [32mok[39m       
+Perms check on cached files         [32mok[39m
+Perms check on local node_modules   [32mok[39m
+Perms check on global node_modules  [32mok[39m
+Perms check on local bin folder     [32mok[39m
+Perms check on global bin folder    [32mok[39m
 Verify cache contents               [32mok[39m      verified 0 tarballs
 `
 
@@ -1412,41 +1366,42 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "checkPing",
+      "doctor",
       "Pinging registry",
     ],
     Array [
-      "getLatestNpmVersion",
+      "doctor",
       "Getting npm package information",
     ],
     Array [
-      "getLatestNodejsVersion",
+      "doctor",
       "Getting Node.js release information",
     ],
     Array [
-      "getGitPath",
+      "doctor",
       "Finding git in your PATH",
     ],
     Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
+      "doctor",
+      "getBinPath Finding npm global bin in your PATH",
     ],
     Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
+      "doctor",
+      "verifyCachedFiles Verifying the npm cache",
     ],
     Array [
-      "verifyCachedFiles",
+      "doctor ",
       String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
+        doctor verifyCachedFiles Verification complete. Stats: {
+         "badContentCount": 0,
+         "reclaimedCount": 0,
+         "missingContent": 0,
+         "verifiedContent": 0
+        doctor }
       ),
     ],
   ],
@@ -1462,11 +1417,11 @@ node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok       
-Perms check on local node_modules   ok       
-Perms check on global node_modules  ok       
-Perms check on local bin folder     ok       
-Perms check on global bin folder    ok       
+Perms check on cached files         ok
+Perms check on local node_modules   ok
+Perms check on global node_modules  ok
+Perms check on local bin folder     ok
+Perms check on global bin folder    ok
 Verify cache contents               ok      verified 0 tarballs
 `
 
@@ -1475,41 +1430,42 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "checkPing",
+      "doctor",
       "Pinging registry",
     ],
     Array [
-      "getLatestNpmVersion",
+      "doctor",
       "Getting npm package information",
     ],
     Array [
-      "getLatestNodejsVersion",
+      "doctor",
       "Getting Node.js release information",
     ],
     Array [
-      "getGitPath",
+      "doctor",
       "Finding git in your PATH",
     ],
     Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
+      "doctor",
+      "getBinPath Finding npm global bin in your PATH",
     ],
     Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
+      "doctor",
+      "verifyCachedFiles Verifying the npm cache",
     ],
     Array [
-      "verifyCachedFiles",
+      "doctor ",
       String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
+        doctor verifyCachedFiles Verification complete. Stats: {
+         "badContentCount": 0,
+         "reclaimedCount": 0,
+         "missingContent": 0,
+         "verifiedContent": 0
+        doctor }
       ),
     ],
   ],
@@ -1525,26 +1481,18 @@ node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok       
-Perms check on local node_modules   ok       
-Perms check on global node_modules  ok       
-Perms check on local bin folder     ok       
-Perms check on global bin folder    ok       
+Perms check on cached files         ok
+Perms check on local node_modules   ok
+Perms check on global node_modules  ok
+Perms check on local bin folder     ok
+Perms check on global bin folder    ok
 Verify cache contents               ok      verified 0 tarballs
 `
 
 exports[`test/lib/commands/doctor.js TAP silent errors > logs 1`] = `
 Object {
   "error": Array [],
-  "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-  ],
+  "info": Array [],
   "warn": Array [],
 }
 `
@@ -1556,46 +1504,7 @@ exports[`test/lib/commands/doctor.js TAP silent errors > output 1`] = `
 exports[`test/lib/commands/doctor.js TAP silent success > logs 1`] = `
 Object {
   "error": Array [],
-  "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
-      ),
-    ],
-  ],
+  "info": Array [],
   "warn": Array [],
 }
 `
@@ -1609,27 +1518,28 @@ Object {
   "error": Array [],
   "info": Array [
     Array [
+      "doctor",
       "Running checkup",
     ],
     Array [
-      "checkPing",
+      "doctor",
       "Pinging registry",
     ],
     Array [
-      "getLatestNpmVersion",
+      "doctor",
       "Getting npm package information",
     ],
     Array [
-      "getLatestNodejsVersion",
+      "doctor",
       "Getting Node.js release information",
     ],
     Array [
-      "getGitPath",
+      "doctor",
       "Finding git in your PATH",
     ],
     Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
+      "doctor",
+      "getBinPath Finding npm global bin in your PATH",
     ],
   ],
   "warn": Array [],
@@ -1638,7 +1548,7 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP windows skips permissions checks > no permissions checks 1`] = `
 Check                      Value   Recommendation/Notes
-npm ping                   ok       
+npm ping                   ok
 npm -v                     ok      current: v1.0.0, latest: v1.0.0
 node -v                    ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry    ok      using default registry (https://registry.npmjs.org/)

@@ -198,7 +198,7 @@ t.test('location detection and audit', async (t) => {
   })
 
   await t.test('test for warning when --global & --audit', async t => {
-    const { npm, logs } = await loadMockNpm(t, {
+    const { npm, logStrings: logs } = await loadMockNpm(t, {
       command: 'install',
       prefixDir: {
         // no package.json

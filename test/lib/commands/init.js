@@ -325,7 +325,7 @@ t.test('workspaces', async t => {
   })
 
   await t.test('missing top-level package.json when settting workspace', async t => {
-    const { npm, logs } = await mockNpm(t, {
+    const { npm, logStrings } = await mockNpm(t, {
       config: { workspace: 'a' },
     })
 
@@ -335,7 +335,7 @@ t.test('workspaces', async t => {
       'should exit with missing package.json file error'
     )
 
-    t.equal(logs.warn[0][0], 'Missing package.json. Try with `--include-workspace-root`.')
+    t.equal(logStrings.warn[0], 'Missing package.json. Try with `--include-workspace-root`.')
   })
 
   await t.test('bad package.json when settting workspace', async t => {

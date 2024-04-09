@@ -30,7 +30,7 @@ const mockRs = async (t, { windows = false, runScript, ...opts } = {}) => {
     ...mock,
     RUN_SCRIPTS: () => RUN_SCRIPTS,
     runScript: mock['run-script'],
-    cleanLogs: () => mock.logs.error.flat().map(v => v.toString()).map(cleanCwd),
+    cleanLogs: () => mock.logStrings.error.flat().map(v => v.toString()).map(cleanCwd),
   }
 }
 

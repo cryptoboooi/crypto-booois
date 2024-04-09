@@ -157,7 +157,7 @@ t.test('token list parseable output', async t => {
     },
   ]
 
-  const { token, joinedOutput } = await mockToken(t, {
+  const { token, joinedOutput, outputStrings } = await mockToken(t, {
     config: { registry: 'https://registry.npmjs.org', parseable: true },
     getCredentialsByURI: uri => {
       t.equal(uri, 'https://registry.npmjs.org/', 'requests correct registry')
@@ -177,22 +177,20 @@ t.test('token list parseable output', async t => {
 
   await token.exec(['list'])
 
-  const lines = joinedOutput().split(/\r?\n/)
-
   t.equal(
-    lines[0],
+    outputStrings[0],
     ['key', 'token', 'created', 'readonly', 'CIDR whitelist'].join('\t'),
     'prints header'
   )
 
   t.equal(
-    lines[1],
+    outputStrings[1],
     [tokens[0].key, tokens[0].token, tokens[0].created, tokens[0].readonly, ''].join('\t'),
     'prints token info'
   )
 
   t.equal(
-    lines[2],
+    outputStrings[2],
     [
       tokens[1].key,
       tokens[1].token,
