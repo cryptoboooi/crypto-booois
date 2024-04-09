@@ -1,5 +1,11 @@
 # Changelog
 
+## [8.2.2](https://github.com/npm/cli/compare/config-v8.2.1...config-v8.2.2) (2024-04-09)
+
+### Bug Fixes
+
+* [`5a28a29`](https://github.com/npm/cli/commit/5a28a29799aac2c89b4e7a3d5c1d1d880346b743) [#7352](https://github.com/npm/cli/pull/7352) perf: lazy load workspace dependency (#7352) (@H4ad)
+
 ## [8.2.1](https://github.com/npm/cli/compare/config-v8.2.0...config-v8.2.1) (2024-04-03)
 
 ### Dependencies
